@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "neko.name" . }}
+  name: neko
   labels:
-    {{- include "neko.labels" . | nindent 4 }}
+    app: neko
   {{- with .Values.service.annotations }}
   annotations:
     {{- toYaml . | nindent 4 }}
@@ -27,15 +27,15 @@ spec:
       protocol: TCP
   {{- end }}
   selector:
-    {{- include "neko.selectorLabels" . | nindent 4 }}
+    neko
 {{- if or (((.Values).env).NEKO_EPR) (((.Values).env).NEKO_UDPMUX) }}
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "neko.name" . }}-udp
+  name: neko-udp
   labels:
-    {{- include "neko.labels" . | nindent 4 }}
+    app: neko
   {{- with .Values.service.annotations }}
   annotations:
     {{- toYaml . | nindent 4 }}
@@ -65,5 +65,5 @@ spec:
         protocol: UDP
     {{- end }}
   selector:
-    {{- include "neko.selectorLabels" . | nindent 4 }}
+    neko
 {{- end }}

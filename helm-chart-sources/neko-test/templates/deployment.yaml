@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "neko.name" . }}
+  name: neko
   labels:
-    {{- include "neko.labels" . | nindent 4 }}
+    neko
   {{- with .Values.deploymentAnnotations }}
   annotations:
     {{ toYaml . | nindent 4 }}
@@ -12,7 +12,7 @@ spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      {{- include "neko.selectorLabels" . | nindent 6 }}
+      app: neko
   template:
     metadata:
       {{- with .Values.podAnnotations }}
@@ -20,7 +20,7 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
-        {{- include "neko.selectorLabels" . | nindent 8 }}
+        app: neko
     spec:
       containers:
         - name: {{ .Chart.Name }}
