@@ -2,12 +2,22 @@ apiVersion: v1
 entries:
   neko:
   - apiVersion: v2
-    created: "2023-09-04T19:24:13.395432+10:00"
+    created: "2023-09-04T19:33:37.883098+10:00"
     description: Share a web browser and react with friends
-    digest: 7a9cf38ad9933b93f69ebfc486b29ca2bbe4c10b00bd96aa1484d3bde93d00b4
+    digest: c0206df61dc33856a97289bc9f6ed0ad38e728edb54bc5caf3650d9cc049fa04
     name: neko
     type: application
     urls:
     - https://thatkit.github.io/helm-charts/neko-0.7.0.tgz
     version: 0.7.0
-generated: "2023-09-04T19:24:13.394838+10:00"
+  neko-test:
+  - apiVersion: v2
+    created: "2023-09-04T19:33:37.883369+10:00"
+    description: Share a web browser and react with friends
+    digest: a3d628faed64d2799c5f348a8bd1e40687c1048a7bc52b95808b811741701e48
+    name: neko-test
+    type: application
+    urls:
+    - https://thatkit.github.io/helm-charts/neko-test-0.7.0.tgz
+    version: 0.7.0
+generated: "2023-09-04T19:33:37.882108+10:00"
