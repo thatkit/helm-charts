@@ -25,7 +25,7 @@ env:
   # NEKO_TCPMUX: 52100
 
 # -- Use an existing secret with environment variables for Neko
-existingSecret: ""
+# existingSecret: ""
 
 # -- Additional persistent volume claims to mount
 # @default -- See values.yaml for an example
@@ -36,7 +36,7 @@ persistence:
   #   path: /dev/dri
 
 # -- Docker image pull secrets
-imagePullSecrets: []
+# imagePullSecrets: []
 # -- Name override
 nameOverride: ""
 # -- Full name override
