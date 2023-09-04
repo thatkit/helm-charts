@@ -22,12 +22,6 @@ spec:
       labels:
         {{- include "neko.selectorLabels" . | nindent 8 }}
     spec:
-      # {{- with .Values.imagePullSecrets }}
-      # imagePullSecrets:
-      #   {{- toYaml . | nindent 8 }}
-      # {{- end }}
-      securityContext:
-        {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
         - name: {{ .Chart.Name }}
           securityContext:
@@ -35,13 +29,6 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           envFrom:
-          # {{- if ne "" .Values.existingSecret }}
-          #   - secretRef:
-          #       name: {{ .Values.existingSecret }}
-          # {{- else }}
-          #   - secretRef:
-          #       name: {{ include "neko.name" . }}
-          # {{- end }}
           {{- if .Values.persistence }}
           volumeMounts:
             {{- range $volume, $volumeConfig := .Values.persistence }}

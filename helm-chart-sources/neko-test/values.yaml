@@ -24,9 +24,6 @@ env:
   # -- TCPMUX port for all streams
   # NEKO_TCPMUX: 52100
 
-# -- Use an existing secret with environment variables for Neko
-# existingSecret: ""
-
 # -- Additional persistent volume claims to mount
 # @default -- See values.yaml for an example
 persistence:
@@ -35,8 +32,6 @@ persistence:
   #   existingClaim: dri-pvc
   #   path: /dev/dri
 
-# -- Docker image pull secrets
-# imagePullSecrets: []
 # -- Name override
 nameOverride: ""
 # -- Full name override
@@ -87,9 +82,6 @@ ingress:
   # -- TLS config
   # @default -- See values.yaml for an example
   tls: []
-  #  - secretName: chart-example-tls
-  #    hosts:
-  #      - chart-example.local
 
 # -- Container resources
 resources:

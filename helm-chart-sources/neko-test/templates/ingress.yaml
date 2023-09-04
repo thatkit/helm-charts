@@ -33,7 +33,7 @@ spec:
         {{- range .hosts }}
         - {{ . | quote }}
         {{- end }}
-      secretName: orbita-goless-tls
+      # secretName: orbita-goless-tls
     {{- end }}
   {{- end }}
   rules:
